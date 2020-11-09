@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="/styles/desktop.css">
+    <title>Lockdown in <%= queriedCountry.name.toUpperCase() %> </title>
+</head>
+<body>
+    <header class="header">
+        <div class="title-container">
+            <h1>LockDown Finder</h1>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li>
+                    Home
+                </li>
+                <li>
+                    Full Table
+                </li>
+                <li>
+                    Sources
+                </li>
+                <li>
+                    Contribute
+                </li>
+            </ul>
+        </nav>
+        <span class="country-title"> <%= queriedCountry.name.toUpperCase() %>  </span>
+    </header>
+
+    <body>
+        <main class="main">
+            <section class="country-section">
+                <div class="img-country-container">
+                    <img src="<%= queriedCountry.countryURL %> " alt="">
+                </div>    
+                <span class="rules-title">LockDown Rules</span>
+                <ul class="rules-container">
+                    <% for(rule of queriedCountry.restrictions) {%> 
+                        <li><%= rule %> </li>
+                    <% } %> 
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+        </footer>
+        
+    </body>
+</body>
+</html>
